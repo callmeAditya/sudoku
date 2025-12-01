@@ -16,3 +16,20 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Run Tests
         run: npm test
+
+  deploy:
+    needs: test
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+        
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+      - name: Run build
+        run: npm build
+      - name: deploy
+        run: echo "Deploying..."
