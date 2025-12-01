@@ -31,5 +31,5 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Run build
         run: npm run build
-      - name: deploy
+      - name: Deploy
         run: echo "Deploying..."
