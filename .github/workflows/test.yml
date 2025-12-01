@@ -1,5 +1,5 @@
 name: Run Tests
-on: [push]
+on: [push, workflow_dispatch]
 permissions: {}
 
 jobs:
@@ -30,6 +30,6 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
       - name: Run build
-        run: npm build
+        run: npm run build
       - name: deploy
         run: echo "Deploying..."
